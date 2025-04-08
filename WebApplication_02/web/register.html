@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="/register" method="get">
+            <table>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; font-size: 24px">LOGIN INFORMATION </td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td> <input type="text" name="Email">  </td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td> <input type="password" name="Password">  </td>
+                </tr>
+                <tr>
+                    <td>Confirm Password: </td>
+                    <td> <input type="password" name="Confirm-Password">  </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; font-size: 24px">USER INFORMATION</td>
+                </tr>
+                <tr>
+                    <td>Full Name </td>
+                    <td> <input type="text" name="Full-Name">  </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>  
+                        <div>
+                            <input type="radio" name="Gender" value="Male" checked="checked"> 
+                            <label>Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="Gender" value="Female"> 
+                            <label>Female</label>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of birth</td>
+                    <td>
+                        <select name="Day">
+                            <option value="empty"></option>
+                            <option value="Day-1">1</option>
+
+                        </select>
+                        <select name="Month">
+                            <option value="empty"></option>
+                            <option value="Month-1">1</option>
+
+                        </select>
+                        <select name="Year">
+                            <option value="empty"></option>
+                            <option value="Year-2000">2000</option>
+
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Mobile:</td>
+                    <td><input type="tel" name="phone"></td>
+
+                </tr>
+                <tr>
+                    <td>Avatar</td>
+                    <td><input type="file" name="file"></td>
+
+                </tr>
+                <tr>
+                    <td style="font-size: 24px; font-weight: bold">USER ADDRESS</td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select name="Country">
+                            <option value="VietName">Việt Nam</option>
+                        </select>
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>
+                        <select name="City">
+                            <option value="HCM">HCM</option>
+                        </select>
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Register">
+                        <input type="reset" value="Clear">
+
+                    </td>
+                </tr>
+
+
+
+            </table>
+
+        </form>
+    </body>
+</html>
