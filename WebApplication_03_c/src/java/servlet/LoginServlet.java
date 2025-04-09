@@ -7,7 +7,6 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDate;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author asus
  */
-@WebServlet(name = "Kiemtranamnhuan", urlPatterns = {"/namnhuan"})
-public class Kiemtranamnhuan extends HttpServlet {
+@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,18 +37,18 @@ public class Kiemtranamnhuan extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Kiemtranamnhuan</title>");
+            out.println("<title>Servlet LoginServlet</title>");
             out.println("</head>");
             out.println("<body>");
+            String Username = request.getParameter("txtlogin");
+            String Password = request.getParameter("txtpassword");
+
+            out.println("Username: "+Username);
+                        out.println("<br/>");
+
+            out.println("Password: "+Password);
+
             
-            int year = LocalDate.now().getYear();
-            if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
-                out.println(year + "Nam nhuan");
-
-            } else {
-                out.println(year + "khong phai nam nhuan");
-
-            }
             out.println("</body>");
             out.println("</html>");
         }
