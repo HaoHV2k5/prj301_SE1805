@@ -66,7 +66,7 @@ public class UsersDAO implements I_DAO<UsersDTO, String>{
     @Override
     public UsersDTO readById(String id) {
       
-        String sql = "select * from dbo.tblUsers where userID = '" +id +"'\";
+        String sql = "select * from dbo.tblUsers where userID = '" +id +"'";
         
         try {
             Connection conn = DBUtils.getConnection();
