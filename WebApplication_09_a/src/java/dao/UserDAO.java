@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -25,16 +24,16 @@ public class UserDAO implements I_DAO<UserDTO,String>{
 
     @Override
     public boolean create(UserDTO entity) {
-        String sql = "INSERT INTO tblUsers (userID, fullName, roleID, password) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO tblUsers (userID, fullName, roleID, password) VALUES (?,?,?,?)";
         
         try {
             Connection conn = DBUtils.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, entity.getUserID());
+            ps.setString(1,entity.getUserID());
             ps.setString(2, entity.getFullName());
             ps.setString(3, entity.getRoleID());
             ps.setString(4, entity.getPassword());
-            int n = ps.executeUpdate();
+            int n =ps.executeUpdate();
             return n> 0;
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -47,17 +46,16 @@ public class UserDAO implements I_DAO<UserDTO,String>{
 
     @Override
     public boolean update(UserDTO entity) {
-        String sql = "update tblUsers set fullName = ?, roleID = ? ,password= ? where userID =?";
+        String sql = "update tblUsers set fullName = ?, roleID = ?, password = ? where userID = ?";
         
         try {
             Connection conn = DBUtils.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(4, entity.getUserID());
+           PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(4,entity.getUserID());
             ps.setString(1, entity.getFullName());
             ps.setString(2, entity.getRoleID());
             ps.setString(3, entity.getPassword());
-            int n = ps.executeUpdate();
-            
+            int n =ps.executeUpdate();
             return n> 0;
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -74,8 +72,9 @@ public class UserDAO implements I_DAO<UserDTO,String>{
         try {
             Connection conn = DBUtils.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, id);
-            int n = ps.executeUpdate();
+            ps.setString(1,id);
+            
+            int n =ps.executeUpdate();
             return n> 0;
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -91,9 +90,8 @@ public class UserDAO implements I_DAO<UserDTO,String>{
         List<UserDTO> list = new ArrayList<>();
         try {
             Connection conn = DBUtils.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);
+           PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            
             while(rs.next()){
                 UserDTO user = new UserDTO(rs.getString("userID"), rs.getString("fullName"), rs.getString("roleID"), rs.getString("password"));
                 list.add(user);
@@ -115,10 +113,7 @@ public class UserDAO implements I_DAO<UserDTO,String>{
             Connection conn = DBUtils.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, id);
-            
-            
             ResultSet rs = ps.executeQuery();
-            
             if(rs.next()){
                 UserDTO user = new UserDTO(rs.getString("userID"), rs.getString("fullName"), rs.getString("roleID"), rs.getString("password"));
                return user;
