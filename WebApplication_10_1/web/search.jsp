@@ -16,7 +16,6 @@
     </head>
     <body>
                 <%@include file="header.jsp" %>
-
         <% 
             UserDTO user = (UserDTO) session.getAttribute("user");
             if(user != null){
@@ -28,10 +27,15 @@
             <input type="submit" value="logout"  />
             
         </form>
+                     <% String searchTerm = request.getAttribute("searchTerm")+"";
+                            
+                         searchTerm = searchTerm.equals("null")?"":searchTerm;
+                     
+                     %>       
 
         <form action="MainController" method="post">
             <input type="hidden" name="action" value="search" />
-            Search Value <input type="text" name="searchTerm"/><br>
+            Search Value <input type="text" name="searchTerm" value="<%= searchTerm %>"/><br>
 
             <input type="submit" name="search"/>
 
@@ -50,7 +54,7 @@
                          <td>Publish Year</td>
                          <td>Price</td>
                          <td>Quantit</td>
-                         
+                         <td>Action</td>
                          
                      </tr>
                      
@@ -66,7 +70,7 @@
                          <td><%= b.getPublishYear()%></td>
                          <td><%= b.getPrice()%></td>
                          <td><%= b.getQuantity()%></td>
-                         
+                         <td> <a href="MainController?action=delete&id=<%= b.getBookID()%>&searchTerm=<%=searchTerm%>"> <img src="assets/img/delete-file-icon.png" style="height: 25px"></a></td>
                          
                      </tr>  
 

@@ -20,12 +20,12 @@ import utils.DBUtils;
  *
  * @author asus
  */
-public class BookDAO implements I_DAO<BookDTO, String>{
+public class BookDAO implements I_DAO<BookDTO, String> {
 
     @Override
     public boolean create(BookDTO entity) {
-            return false;
-     }
+        return false;
+    }
 
     @Override
     public boolean update(BookDTO entity) {
@@ -47,29 +47,79 @@ public class BookDAO implements I_DAO<BookDTO, String>{
     public BookDTO readById(String id) {
         return null;
     }
-    
+
     public List<BookDTO> searchByTitle(String searchTerm) {
-         String sql = "select * from tblBooks where title like ?";
-            List<BookDTO> list = new ArrayList<>();
+        String sql = "select * from tblBooks where title like ?";
+        List<BookDTO> list = new ArrayList<>();
         try {
-           
-            
+
             Connection conn = DBUtils.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, "%" + searchTerm + "%");
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 BookDTO book = new BookDTO(
-                        rs.getString("BookID"), 
-                        rs.getString("Title"), 
-                        rs.getString("Author"), 
-                        rs.getInt("PublishYear"), 
-                        rs.getDouble("Price"), 
+                        rs.getString("BookID"),
+                        rs.getString("Title"),
+                        rs.getString("Author"),
+                        rs.getInt("PublishYear"),
+                        rs.getDouble("Price"),
                         rs.getInt("Quantity"));
+               
+                    list.add(book);
+
                 
-                list.add(book);
             }
-            
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BookDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(BookDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
+    
+    public List<BookDTO> searchByTitle2(String searchTerm) {
+        String sql = "select * from tblBooks where title like ? and quantity >0";
+        List<BookDTO> list = new ArrayList<>();
+        try {
+
+            Connection conn = DBUtils.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, "%" + searchTerm + "%");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                BookDTO book = new BookDTO(
+                        rs.getString("BookID"),
+                        rs.getString("Title"),
+                        rs.getString("Author"),
+                        rs.getInt("PublishYear"),
+                        rs.getDouble("Price"),
+                        rs.getInt("Quantity"));
+               
+                    list.add(book);
+
+                
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BookDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(BookDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
+
+    public boolean updateQuantityToZero(String id) {
+        try {
+            String sql = "update tblBooks set quantity = 0 where BookID = ?";
+            Connection conn = DBUtils.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, id);
+            int i = ps.executeUpdate();
+            return i>0;
             
             
         } catch (ClassNotFoundException ex) {
@@ -77,10 +127,8 @@ public class BookDAO implements I_DAO<BookDTO, String>{
         } catch (SQLException ex) {
             Logger.getLogger(BookDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return list;
-    
-    
-    
+        return false;
     }
     
+
 }
