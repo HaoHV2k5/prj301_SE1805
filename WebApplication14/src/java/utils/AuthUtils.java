@@ -36,7 +36,6 @@ public class AuthUtils {
         UserDTO user = getUserByID(username);
         return user != null && user.getPassword().equals(password);
     }
-    
     public static boolean isAdmin(HttpSession session){
         if(!isLoggedIn(session)){
             return false;
