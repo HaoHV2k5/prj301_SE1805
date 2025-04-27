@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tiki-like Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#f5f5f7] min-h-screen">
+  <div class="flex gap-6 p-6 max-w-[100vw] overflow-x-hidden">
+    <!-- Left Sidebar -->
+    <aside
+      class="bg-white rounded-xl p-6 w-[280px] flex-shrink-0 max-h-[calc(100vh-48px)] overflow-y-auto"
+    >
+      <h3 class="font-semibold text-base mb-6">Danh mục</h3>
+      <ul class="space-y-5 text-sm text-[#222222]">
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Book&font=roboto"
+            alt="Blue book cover with white text"
+            class="w-6 h-6 object-contain"
+          />
+          Nhà Sách Tiki
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Pot&font=roboto"
+            alt="Blue cooking pot icon"
+            class="w-6 h-6 object-contain"
+          />
+          Nhà Cửa - Đời Sống
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Phone&font=roboto"
+            alt="Smartphone with colorful screen"
+            class="w-6 h-6 object-contain"
+          />
+          Điện Thoại - Máy Tính Bảng
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Bear&font=roboto"
+            alt="Brown teddy bear toy"
+            class="w-6 h-6 object-contain"
+          />
+          Đồ Chơi - Mẹ & Bé
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Headphone&font=roboto"
+            alt="Black headphones"
+            class="w-6 h-6 object-contain"
+          />
+          Thiết Bị Số - Phụ Kiện Số
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Airfryer&font=roboto"
+            alt="Black air fryer appliance"
+            class="w-6 h-6 object-contain"
+          />
+          Điện Gia Dụng
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Lipstick&font=roboto"
+            alt="Makeup lipstick and brush"
+            class="w-6 h-6 object-contain"
+          />
+          Làm Đẹp - Sức Khỏe
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Motorbike&font=roboto"
+            alt="Red motorbike icon"
+            class="w-6 h-6 object-contain"
+          />
+          Ô Tô - Xe Máy - Xe Đạp
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Dress&font=roboto"
+            alt="Blue women's dress"
+            class="w-6 h-6 object-contain"
+          />
+          Thời trang nữ
+        </li>
+        <li class="flex items-center gap-3">
+          <img
+            src="https://placehold.co/24x24/png?text=Oil&font=roboto"
+            alt="Yellow cooking oil bottle"
+            class="w-6 h-6 object-contain"
+          />
+          Bách Hóa Online
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 space-y-6 overflow-x-hidden">
+      <!-- Products You Care About -->
+      <section>
+        <h3 class="font-semibold text-base mb-4">Sản phẩm bạn quan tâm</h3>
+        <div
+          class="flex gap-4 overflow-x-auto scrollbar-hide pb-2"
+          style="scrollbar-width:none"
+        >
+          <!-- Product 1 -->
+          <article
+            class="bg-white rounded-xl min-w-[180px] max-w-[180px] flex-shrink-0 p-3"
+          >
+            <div class="relative">
+              <img
+                src="https://placehold.co/180x180/yellow/000000?text=Yellow+tool+set+with+screwdriver"
+                alt="Yellow tool set with screwdriver and bits in a case"
+                class="rounded-lg"
+              />
+              <div
+                class="absolute top-2 right-2 bg-white rounded-lg border border-gray-300 text-xs font-semibold text-gray-700 px-2 py-0.5"
+              >
+                33
+              </div>
+            </div>
+            <h4
+              class="mt-2 text-sm font-normal text-[#222222] leading-5 line-clamp-2"
+            >
+              Bộ Tua Vít Sửa Chữa Đa Chức Năng Deli 33 Món
+            </h4>
+            <div class="flex items-center mt-1 space-x-1 text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="mt-1 font-semibold text-base text-[#222222]">
+              116.000<span class="text-xs">₫</span>
+            </p>
+            <p class="mt-2 text-xs text-gray-400">Giao thứ 6, 02/05</p>
+          </article>
+
+          <!-- Product 2 -->
+          <article
+            class="bg-white rounded-xl min-w-[180px] max-w-[180px] flex-shrink-0 p-3"
+          >
+            <img
+              src="https://placehold.co/180x180/black/white?text=Black+book+cover+Destination+B1"
+              alt="Black book cover Destination B1 Grammar & Vocabulary with Answer Key"
+              class="rounded-lg"
+            />
+            <h4
+              class="mt-2 text-sm font-normal text-[#222222] leading-5 line-clamp-2"
+            >
+              Destination B1 Grammar and Vocabulary
+            </h4>
+            <p class="mt-1 text-sm font-semibold text-[#e61e2b]">
+              138.580<span class="text-xs">₫</span>
+            </p>
+            <div class="flex gap-1 text-xs text-gray-400 line-through">
+              <span>169.000₫</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">-18%</p>
+            <p class="mt-2 text-xs text-gray-400">Giao thứ 7, 03/05</p>
+          </article>
+
+          <!-- Product 3 -->
+          <article
+            class="bg-white rounded-xl min-w-[180px] max-w-[180px] flex-shrink-0 p-3"
+          >
+            <div class="relative">
+              <img
+                src="https://placehold.co/180x180/yellow/black?text=Yellow+Hackers+IELTS+Listening+book"
+                alt="Yellow Hackers IELTS Listening Basic book cover"
+                class="rounded-lg"
+              />
+              <div
+                class="absolute top-2 left-2 bg-[#e61e2b] text-white text-xs font-semibold rounded-md px-2 py-0.5"
+              >
+                25.4
+              </div>
+            </div>
+            <h4
+              class="mt-2 text-sm font-normal text-[#222222] leading-5 line-clamp-2"
+            >
+              Hackers IELTS Basic-Listening
+            </h4>
+            <div class="flex items-center mt-1 space-x-1 text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="mt-1 text-sm font-semibold text-[#e61e2b]">
+              157.000<span class="text-xs">₫</span>
+            </p>
+            <div class="flex gap-1 text-xs text-gray-400 line-through">
+              <span>229.000₫</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">-31%</p>
+            <p class="mt-2 text-xs text-gray-400">Giao thứ 3, 29/04</p>
+          </article>
+
+          <!-- Product 4 -->
+          <article
+            class="bg-white rounded-xl min-w-[180px] max-w-[180px] flex-shrink-0 p-3"
+          >
+            <img
+              src="https://placehold.co/180x180/black/yellow?text=Destination+B1+Grammar+and+Vocabulary+book"
+              alt="Destination B1 Grammar and Vocabulary book cover with red and yellow accents"
+              class="rounded-lg"
+            />
+            <h4
+              class="mt-2 text-sm font-normal text-[#222222] leading-5 line-clamp-2"
+            >
+              Destination B1 Grammar and Vocabulary
+            </h4>
+            <div class="flex items-center mt-1 space-x-1 text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="mt-1 text-sm font-semibold text-[#e61e2b]">
+              138.840<span class="text-xs">₫</span>
+            </p>
+            <div class="flex gap-1 text-xs text-gray-400 line-through">
+              <span>178.000₫</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">-22%</p>
+            <p class="mt-2 text-xs text-gray-400">Giao thứ 6, 02/05</p>
+          </article>
+
+          <!-- Product 5 -->
+          <article
+            class="bg-white rounded-xl min-w-[180px] max-w-[180px] flex-shrink-0 p-3"
+          >
+            <img
+              src="https://placehold.co/180x180/yellow/green?text=Combo+Mindmap+English+Grammar+books"
+              alt="Combo Mindmap English Grammar and Vocabulary books with yellow and green covers"
+              class="rounded-lg"
+            />
+            <h4
+              class="mt-2 text-sm font-normal text-[#222222] leading-5 line-clamp-2"
+            >
+              Combo Mindmap English Grammar và Vocabulary
+            </h4>
+            <div class="flex items-center mt-1 space-x-1 text-yellow-400 text-xs">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="far fa-star text-gray-300"></i>
+              <i class="far fa-star text-gray-300"></i>
+              <i class="far fa-star text-gray-300"></i>
+              <i class="far fa-star text-gray-300"></i>
+            </div>
+            <p class="mt-1 text-sm font-semibold text-[#e61e2b]">
+              142.500<span class="text-xs">₫</span>
+            </p>
+            <div class="flex gap-1 text-xs text-gray-400 line-through">
+              <span>190.000₫</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">-25%</p>
+            <p class="mt-2 text-xs text-gray-400">Giao thứ 7, 03/05</p>
+          </article>
+
+          <!-- Product 6 -->
+          <article
+            class="bg-white rounded-xl min-w-[180px] max-w-[180px] flex-shrink-0 p-3"
+          >
+            <img
+              src="https://placehold.co/180x180/orange/white?text=Check+Your+English+Vocabulary+for+IELTS+book"
+              alt="Orange book cover Check Your English Vocabulary for IELTS"
+              class="rounded-lg"
+            />
+            <h4
+              class="mt-2 text-sm font-normal text-[#222222] leading-5 line-clamp-2"
+            >
+              Check Your English Vocabulary For Ielts
+            </h4>
+            <p class="mt-1 text-sm font-semibold text-[#e61e2b]">
+              114.200<span class="text-xs">₫</span>
+            </p>
+            <div class="flex gap-1 text-xs text-gray-400 line-through">
+              <span>149.000₫</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">-23%</p>
+            <p class="mt-2 text-xs text-gray-400">Giao thứ 2, 01/05</p>
+          </article>
+
+          <!-- Arrow Right Button -->
+          <button
+            aria-label="Scroll right"
+            class="absolute right-6 top-[110px] bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md"
+          >
+            <i class="fas fa-chevron-right text-[#222222]"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- Flash Sale Section (partial visible) -->
+      <section>
+        <h3 class="font-semibold text-base mb-4">
+          Flash Sale
+          <span
+            class="inline-block bg-[#e61e2b] text-white text-xs font-semibold rounded px-2 py-1 ml-2"
+            >00</span
+          >
+          <span
+            class="inline-block bg-[#e61e2b] text-white text-xs font-semibold rounded px-2 py-1 mx-1"
+            >34</span
+          >
+          <span
+            class="inline-block bg-[#e61e2b] text-white text-xs font-semibold rounded px-2 py-1"
+            >10</span
+          >
+        </h3>
+        <div class="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+          <article class="min-w-[120px] max-w-[120px] flex-shrink-0">
+            <img
+              src="https://placehold.co/120x120/blue/white?text=Blue+book+cover+with+math+symbols"
+              alt="Blue book cover with math symbols and white text"
+              class="rounded-lg"
+            />
+            <div
+              class="absolute bg-[#f9c0c0] text-[#e61e2b] text-xs font-semibold rounded px-2 py-1 -mt-6 ml-1"
+            >
+              -38%
+            </div>
+          </article>
+          <article class="min-w-[120px] max-w-[120px] flex-shrink-0">
+            <img
+              src="https://placehold.co/120x120/white/red?text=White+book+cover+with+red+paint+splashes"
+              alt="White book cover with red paint splashes and dopamine text"
+              class="rounded-lg"
+            />
+            <div
+              class="absolute bg-[#f9c0c0] text-[#e61e2b] text-xs font-semibold rounded px-2 py-1 -mt-6 ml-1"
+            >
+              -40%
+            </div>
+          </article>
+          <article class="min-w-[120px] max-w-[120px] flex-shrink-0">
+            <img
+              src="https://placehold.co/120x120/purple/white?text=Purple+hair+dryer"
+              alt="Purple hair dryer product image"
+              class="rounded-lg"
+            />
+            <div
+              class="absolute bg-[#f9c0c0] text-[#e61e2b] text-xs font-semibold rounded px-2 py-1 -mt-6 ml-1"
+            >
+              -30%
+            </div>
+          </article>
+          <article class="min-w-[120px] max-w-[120px] flex-shrink-0">
+            <img
+              src="https://placehold.co/120x120/black/white?text=Black+toothbrush+set"
+              alt="Black toothbrush set product image"
+              class="rounded-lg"
+            />
+            <div
+              class="absolute bg-[#f9c0c0] text-[#e61e2b] text-xs font-semibold rounded px-2 py-1 -mt-6 ml-1"
+            >
+              -44%
+            </div>
+          </article>
+          <article class="min-w-[120px] max-w-[120px] flex-shrink-0">
+            <img
+              src="https://placehold.co/120x120/white/black?text=White+LocknLock+product"
+              alt="White LocknLock product image"
+              class="rounded-lg"
+            />
+            <div
+              class="absolute bg-[#f9c0c0] text-[#e61e2b] text-xs font-semibold rounded px-2 py-1 -mt-6 ml-1"
+            >
+              -32%
+            </div>
+          </article>
+          <article class="min-w-[120px] max-w-[120px] flex-shrink-0">
+            <img
+              src="https://placehold.co/120x120/black/white?text=Black+LocknLock+product"
+              alt="Black LocknLock product image"
+              class="rounded-lg"
+            />
+            <div
+              class="absolute bg-[#f9c0c0] text-[#e61e2b] text-xs font-semibold rounded px-2 py-1 -mt-6 ml-1"
+            >
+              -39%
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Buttons on right side -->
+    <div
+      class="fixed right-6 top-[40%] flex flex-col divide-y divide-blue-600 rounded-xl overflow-hidden shadow-lg"
+      style="width: 72px"
+    >
+      <button
+        class="bg-blue-600 text-white flex flex-col items-center justify-center gap-1 py-3 px-2"
+        aria-label="Trợ lý"
+      >
+        <i class="fas fa-bullseye fa-lg"></i>
+        <span class="text-xs">Trợ lý</span>
+      </button>
+      <button
+        class="bg-blue-600 text-white flex flex-col items-center justify-center gap-1 py-3 px-2"
+        aria-label="Tin mới"
+      >
+        <i class="fas fa-comment-alt fa-lg"></i>
+        <span class="text-xs">Tin mới</span>
+      </button>
+    </div>
+  </div>
+</body>
+</html>
+

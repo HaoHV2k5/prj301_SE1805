@@ -1,6 +1,6 @@
 <%-- 
-    Document   : detail
-    Created on : Apr 26, 2025, 11:22:29 AM
+    Document   : register_user
+    Created on : Apr 26, 2025, 6:18:22 PM
     Author     : asus
 --%>
 
